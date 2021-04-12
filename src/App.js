@@ -8,6 +8,9 @@ import tubby from "./images/tubby.jpg";
 import duke from "./images/duke.jpg";
 import "./App.css";
 
+//Bonus: is there a way to get the current dog before you render
+//the component, passing dog instead of the entire list of dog 
+//data?
 function App(props) {
   return (
     <div className="App">
@@ -15,7 +18,7 @@ function App(props) {
         <NavBar names={props.dogs.map((dog) => dog.name)} className="Nav" />
         <Switch>
           <Route exact path="/dogs">
-            <DogList />
+            <DogList dogs={props.dogs}/>
           </Route>
           <Route exact path="/dogs/:name">
             <DogDetail dogs={props.dogs} />
